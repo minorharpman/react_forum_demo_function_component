@@ -36,7 +36,7 @@ function Post(props) {
 
     return (
         <div className="row" >
-            <div className="col" >post: </div>
+            <div className="col" >Post: </div>
             <div className="col"> {props.post.id}</div>
             <div className="col" > {props.post.title}</div>
             <div className="col" > {String(props.post.createdAt)}</div>

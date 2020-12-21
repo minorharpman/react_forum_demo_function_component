@@ -5,7 +5,7 @@ import db from "../lib/firebase";
 function AddPost() {
 
     const [title, setTitle] = useState("");
- 
+
     const handleSubmit = async () => {
         const date = new Date();
         await db.collection("posts").add({
@@ -20,32 +20,27 @@ function AddPost() {
     };
     return (
 
-        <div>
-
-
-            <div>
-
-                <div>Post title</div>
+        <div className="row  mt-4 mb-4">
+            <div className="col-md-2">
+                Add post:
+            </div>
+            <div className="col-md-6" >
                 <input
-                    type="post-title"
+                    type="text"
+                    className="form-control"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
 
             </div>
-
-
-
+            <div className="col-md-2" ></div>
             <button className="btn btn-primary"
                 onClick={handleSubmit}
             >
                 Save
                   </button>
-
-
-
-
         </div>
+
 
     );
 };
