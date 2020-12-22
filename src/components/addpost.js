@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import db from "../lib/firebase";
 
-function AddPost() {
+function AddPost(props) {
 
     const [title, setTitle] = useState("");
 
@@ -12,6 +12,11 @@ function AddPost() {
             title,
             createdAt: date.toUTCString(),
      
+        }).then(function () {
+            console.log("Document successfully Added!");
+            props.changeFunction();
+        }).catch(function (error) {
+            console.error("Error : ", error);
         });
 
         setTitle("");

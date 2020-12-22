@@ -9,7 +9,7 @@ import db from "../lib/firebase";
     //https://console.firebase.google.com/u/0/project/react-forum-demo-42cd4/firestore/data~2Fposts~2F3KqPYmZ9WiGTNyew9RY1
     //https://stackoverflow.com/questions/47180076/how-to-delete-document-from-firestore-using-where-clause
 
-function AddPost() {
+function Superdelete(props) {
 
     const [title, setTitle] = useState("");
 
@@ -21,6 +21,11 @@ function AddPost() {
                 querySnapshot.forEach(function (doc) {
                     doc.ref.delete();
                 });
+            }).then(function () {
+                console.log("Document(s) successfully deleted!");
+                props.changeFunction();
+            }).catch(function (error) {
+                console.error("Error : ", error);
             });
 
         /* await db.collection("posts").where("title", "==", title).get()
@@ -61,4 +66,4 @@ function AddPost() {
 
     );
 };
-export default AddPost;
+export default Superdelete;

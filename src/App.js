@@ -5,6 +5,7 @@ import Superdelete from "./components/superdelete";
 import db from "./lib/firebase";
 
 function App() {
+
   //Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
   //https://reactjs.org/docs/hooks-state.html
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,10 @@ function App() {
   //useEffect hook can be used to replicate lifecycle behavior, and useState can be used to store state in a function component.
 
   useEffect(() => {
-    // Hook to handle the initial fetching of posts
+    refreshData();
+  }, []);
+
+  const refreshData = () => {
     db.collection("posts")
       .orderBy("createdAt", "desc")
       .get()
@@ -25,9 +29,10 @@ function App() {
         }));
         setPosts(data);
       });
-    console.log("posts");
-    console.log(posts);
-  }, []);
+    //console.log("posts");
+    // console.log(posts);
+  };
+
 
 
 
@@ -35,13 +40,13 @@ function App() {
 
     <div className="container">
       <h1>Posts: </h1>
-      <AddPost />
+      <AddPost changeFunction={refreshData} />
 
       {posts.map((post) => (
-        <Post post={post} key={post.id} />
+        <Post post={post} key={post.id} changeFunction={refreshData} />
       ))}
 
-      <Superdelete />
+      <Superdelete changeFunction={refreshData} />
 
     </div>
 

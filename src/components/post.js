@@ -10,6 +10,7 @@ function Post(props) {
         //https://firebase.google.com/docs/firestore/manage-data/delete-data#fields
         await db.collection("posts").doc(id).delete().then(function () {
             console.log("Document successfully deleted!");
+            props.changeFunction();
         }).catch(function (error) {
             console.error("Error removing document: ", error);
         });
