@@ -4,6 +4,7 @@ https://create-react-app.dev/docs/adding-custom-environment-variables/
 Creete   am .env file in the project root folder.
 And copy the firebase connection data.
 
+.env file content:
 REACT_APP_FIREBASE_API_KEY="............"
 REACT_APP_FIREBASE_AUTH_DOMAIN="............"
 REACT_APP_FIREBASE_PROJECT_ID="............"
