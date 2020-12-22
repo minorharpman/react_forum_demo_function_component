@@ -42,7 +42,7 @@ function Superdelete(props) {
     return (
 
         <div className="row  mt-4 mb-4 p-4 bg-secondary text-white">
-            <div className="col-md-12"><h4> Delete with the Text of the Title:</h4></div>
+            <div className="col-md-12"><h4> Delete (start chars):</h4></div>
             <div className="col-md-2">
                 Type some  start chars of the Title:
             </div>

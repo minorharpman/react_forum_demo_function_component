@@ -40,7 +40,7 @@ function AddPost(props) {
             <button className="btn btn-primary btn-lg"
                 onClick={handleSubmit}
             >
-                Save
+                Add
                   </button>
         </div>
 
