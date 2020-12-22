@@ -1,12 +1,15 @@
 import firebase from "firebase";
 const firebaseConfig = {
-  apiKey: "AIzaSyDB0WiIU_6BpQUT-2LKS-6SgKQMtuGr5n0",
-  authDomain: "react-forum-demo-42cd4.firebaseapp.com",
-  projectId: "react-forum-demo-42cd4",
-  storageBucket: "react-forum-demo-42cd4.appspot.com",
-  messagingSenderId: "686059240054",
-  appId: "1:686059240054:web:9170a3b28236bc2abf7d57",
-  measurementId: "G-EVHWQ35BR5",
+
+
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+
+
 };
 const initFirebase = firebase.initializeApp(firebaseConfig);
 const db = initFirebase.firestore();

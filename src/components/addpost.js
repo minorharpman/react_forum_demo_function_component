@@ -10,17 +10,15 @@ function AddPost() {
         const date = new Date();
         await db.collection("posts").add({
             title,
-            upVotesCount: 0,
-            downVotesCount: 0,
             createdAt: date.toUTCString(),
-            updatedAt: date.toUTCString(),
+     
         });
 
         setTitle("");
     };
     return (
 
-        <div className="row  mt-4 mb-4">
+        <div className="row  mt-4 mb-4 p-4 bg-info text-white">
             <div className="col-md-2">
                 Add post:
             </div>
@@ -34,7 +32,7 @@ function AddPost() {
 
             </div>
             <div className="col-md-2" ></div>
-            <button className="btn btn-primary"
+            <button className="btn btn-primary btn-lg"
                 onClick={handleSubmit}
             >
                 Save
