@@ -4,6 +4,9 @@ https://create-react-app.dev/docs/adding-custom-environment-variables/
 Creete   am .env file in the project root folder.
 And copy the firebase connection data.
 
+Hozz létre egy .env filet a projekt folderben és a lenti tartallmat másold be.
+Azután szerkeszd a Firestore kapcsolódás adataidat.
+
 .env file content:
 REACT_APP_FIREBASE_API_KEY="............"
 REACT_APP_FIREBASE_AUTH_DOMAIN="............"
