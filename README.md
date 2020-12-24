@@ -7,3 +7,21 @@ A Youtube videó linkje
 
 Minden videóhoz külön repot, projektet hozok létre, hogy a kód megegyezzen a videóanyagával.
 
+
+Console parancsok:
+
+npx create-react-app react_forum_demo_bootstrap
+
+cd react_forum_demo_bootstrap
+
+npm install
+
+npm install bootstrap
+
+npm install firebase
+
+npm start
+
+
+
+
