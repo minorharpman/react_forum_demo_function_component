@@ -19,6 +19,10 @@ function App() {
   }, []);
 
   const refreshData = () => {
+    //console.log("db:");
+    //console.log(db.serverTimestamp);
+
+
     db.collection("posts")
       .orderBy("createdAt", "desc")
       .get()

@@ -15,4 +15,8 @@ const firebaseConfig = {
 };
 const initFirebase = firebase.initializeApp(firebaseConfig);
 const db = initFirebase.firestore();
+// időbélyeg hozzáadva
+db.serverTimestamp = firebase.firestore.FieldValue.serverTimestamp();
+
+
 export default db;

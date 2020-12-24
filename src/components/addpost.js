@@ -10,8 +10,9 @@ function AddPost(props) {
         const date = new Date();
         await db.collection("posts").add({
             title,
-            createdAt: date.toUTCString(),
-     
+           // createdAt: date.toUTCString(),
+            createdAt: db.serverTimestamp ,
+
         }).then(function () {
             console.log("Document successfully Added!");
             props.changeFunction();
